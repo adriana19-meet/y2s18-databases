@@ -1,3 +1,4 @@
+
 from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
@@ -5,22 +6,27 @@ from sqlalchemy import create_engine
 
 Base = declarative_base()
 
-class sushi(base):
-	 __tablename__ ="sushi"
-	 sushi_id = Column(Integer, primary_key=True)
-	  name = Column(String)
-      country = Column(Integer)
-      rate = 9
-
-
-
 class Knowledge(Base):
-	# Create a table with 4 columns
-	# The first column will be the primary key
-	# The second column should be a string representing
-	# the name of the Wiki article that you're referencing
-	# The third column will be a string representing the 
-	# topic of the article. The last column will be
-	# an integer, representing your rating of the article.
+    # Create a table with 4 columns
+    # The first column will be the primary key
+    # The second column should be a string representing
+    # the name of the Wiki article that you're referencing
+    # The third column will be a string representing the 
+    # topic of the article. The last column will be
+    # an integer, representing your rating of the article.
+    __tablename__ ="Knowledge"
+    knowledge_id = Column(Integer, primary_key=True)
+    name  = Column(String)
+    wikipedia = Column(String)
+    rating = Column(Integer)
+    
+    def __repr__(self):
+        return("name:{}\n"
+            "wikipedia:{}\n"
+            "rating:{\n").format(self.name,self.wikipedia,self.rating)
 
-	pass
+
+
+        
+
+
