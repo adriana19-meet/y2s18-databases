@@ -5,6 +5,15 @@ from sqlalchemy import create_engine
 
 Base = declarative_base()
 
+class sushi(base):
+	 __tablename__ ="sushi"
+	 sushi_id = Column(Integer, primary_key=True)
+	  name = Column(String)
+      country = Column(Integer)
+      rate = 9
+
+
+
 class Knowledge(Base):
 	# Create a table with 4 columns
 	# The first column will be the primary key
