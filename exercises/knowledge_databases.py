@@ -19,32 +19,63 @@ def add_Name(name,wikipedia,rating):
     session.commit()
 
 
-add_Name("sushi","artical",9)
-
+add_Name("sushi","article",9)
 
 
 def query_all_articles(name):
     articles = session.query(
       Knowledge).filter_by(name = name).all()
       
-      return articles
-
-print(query_all_articles("adoo")
-
+    return articles
+print(query_all_articles("adoo"))
 
 
+def delete_Knowledge(name):
 
 
+ session.query(Knowledge).filter_by(
+       name=name).delete()
+ session.commit()
+
+ delete_Knowledge("adoo")
+
+ def delete_article_by_topic(name):
+     session.query(Knowledge).filter_by(name = name).delete()
+     session.commit()
 
 
-def query_article_by_topic():
-    pass
-
-def delete_article_by_topic():
-    pass
 
 def delete_all_articles():
-    pass
+    session.query(Knowledge).delete()
+    session.commit()
+
+
+  
+
+def query_article_by_topic():
+
+    article = session.query(Knowledge).filter_by(name = name).all()
+    return article
+
+
 
 def edit_article_rating():
-    pass
+    topic = input("what's ur fav food?")
+    new_one =input ("what's ur highest rate ?")
+    article = session.query(Knowledge).filter_by(name = name).all()
+    article.rating  = rating
+    session.commit()
+
+add_Name("mac","article",8)    
+
+
+
+
+
+
+    
+        
+
+
+
+    

@@ -23,7 +23,7 @@ class Knowledge(Base):
     def __repr__(self):
         return("name:{}\n"
             "wikipedia:{}\n"
-            "rating:{\n").format(self.name,self.wikipedia,self.rating)
+            "rating:{\n").(self.name,self.wikipedia,self.rating)
 
 
 
